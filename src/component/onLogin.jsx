@@ -5,7 +5,6 @@ function OnLogin(){
 
     const [usuario, setUsuario] = useState("");
     const [pass, setPass] = useState("");
-    //const response=getUser();
 
     const onUsuarioChange=(event)=>{
         setUsuario(event.target.value);
@@ -21,7 +20,8 @@ function OnLogin(){
         console.log('oprimio el boton');
         console.log(user);
         console.log(password);
-        //console.log(response);
+        const response=getUser();
+        console.log(response);
     }
 
     return(
@@ -39,6 +39,11 @@ function OnLogin(){
             onChange={(event)=>onPassChange(event)}/>
 
             <button type="button" onClick={()=>onSumitButton(usuario,pass)}>Iniciar sesion</button>
+            <button type="button" onClick={async()=>{
+                const res=await fetch('http://localhost:3300/api/users/marco');
+                const data=await res.json()
+                console.log(data);
+            }}>Res</button>
         </form>
     </div>
     </>
