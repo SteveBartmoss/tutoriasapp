@@ -1,9 +1,9 @@
 export const getUser=async()=>{
     const urluser='http://localhost:3300/api/users/marco';
     const res=await fetch(urluser);
-    const {data}=res.json();
+    const data=await res.json();
 
-    const user=data.map(user=>{
+    /*const user=data.map(user=>{
         return{
             id:user.idlogin,
             user:user.usuario,
@@ -12,7 +12,7 @@ export const getUser=async()=>{
             tipe:user.tipo,
             recove:user.recover
         }
-    });
+    });*/
 
-    return user;
+    return data;
 }
