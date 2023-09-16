@@ -1,18 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function NavUser(){
     return(
+        <>
         <div>
             <ul>
                 <li>
-                    <Link>Crear Usuario</Link>
+                    <Link to="/create">Crear Usuario</Link>
                 </li>
                 <li>
-                    <Link>Editar usuarios</Link>
+                    <Link to="#">Editar usuarios</Link>
                 </li>
             </ul>
         </div>
+        </>
     );
 }
 
