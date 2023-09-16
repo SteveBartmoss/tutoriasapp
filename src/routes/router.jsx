@@ -1,22 +1,20 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../pages/login";
-import Admuser from "../pages/amduser";
+import AdminRouter from "./adminRouter";
 
-function Router(){
+function AppRouter(){
     return(
         <BrowserRouter>
-        <Routes>
-            
-            <Route path="/" element={<Login/>}/>
+            <Routes>
+                <Route path="login" element={<Login />} />
 
-            <Route path="admuser" element={<Admuser />} />
+                <Route path="/*" element={<AdminRouter />} />
 
-
-
-        </Routes>
+                <Route path="recover" element={<h1>Recover page</h1>} />
+            </Routes>
         </BrowserRouter>
     );
 }
 
-export default Router;
+export default AppRouter;
