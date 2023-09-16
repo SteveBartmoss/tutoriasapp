@@ -3,11 +3,19 @@ import { Link } from "react-router-dom";
 
 function NavBar(){
     return(
-        <div>
+        <div className="menu">
             <ul>
+                <li>
+                    <Link to="/home">Home</Link>
+                </li>
                 <p>Amdin</p>
                 <li>
-                    <Link to="/admuser">Creacion de usuarios</Link>
+                    <Link to="/createuser">Creacion de usuarios</Link>
+
+                </li>
+                <li>
+                    <Link to="/adminuser">Admin usuarios</Link>
+
                 </li>
                 <li>
                     <Link to="/kardex">Captura de Kardex</Link>
