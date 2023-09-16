@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { createUser } from "../helpers/userApi";
+import NavUser from "../routes/navUser";
 
 function Admuser(){
-
     const [user,setUser]=useState('');
     const [name,setName]=useState('');
     const [pass,setPass]=useState('');
@@ -44,6 +44,7 @@ function Admuser(){
     }
     return(
         <>
+        <NavUser/>
         <h1>Admin Usuarios</h1>
         <p>Usuario</p>
         <input type="text" value={user} placeholder="gate"
