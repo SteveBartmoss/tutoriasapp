@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { getUser } from "../helpers/getUser";
+import { getUser } from "../helpers/userApi";
+
 
 function OnLogin(){
 
@@ -16,12 +17,12 @@ function OnLogin(){
         //console.log(pass);
     }
 
-    const onSumitButton=(user,password)=>{
-        console.log('oprimio el boton');
-        console.log(user);
-        console.log(password);
-        const response=getUser();
-        console.log(response);
+    const onSumitButton=async (user,password)=>{
+        //console.log('oprimio el boton');
+        //console.log(user);
+        //console.log(password);
+        const response= await getUser(usuario);
+        console.log(response.data.password);
     }
 
     return(
@@ -39,11 +40,6 @@ function OnLogin(){
             onChange={(event)=>onPassChange(event)}/>
 
             <button type="button" onClick={()=>onSumitButton(usuario,pass)}>Iniciar sesion</button>
-            <button type="button" onClick={async()=>{
-                const res=await fetch('http://localhost:3300/api/users/marco');
-                const data=await res.json()
-                console.log(data);
-            }}>Res</button>
         </form>
     </div>
     </>
